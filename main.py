@@ -11,7 +11,7 @@ from io import BytesIO
 app = FastAPI()
 
 # Define path to the YOLOv5 model file
-model_path = 'yolov5s.pt'  # Adjust to your model file location
+model_path = 'yolov5su.pt'  # Adjust to your model file location
 
 # Check if the model file exists
 if not os.path.exists(model_path):
