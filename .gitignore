@@ -24,6 +24,7 @@ bin/
 lib64/
 parts/
 sdist/
+share/
 var/
 *.egg-info/
 .installed.cfg
@@ -36,6 +37,7 @@ coverage.xml
 *.coveragerc
 *.pytest_cache/
 *.test
+pyvenv.cfg
 
 # IDEs and Editors
 .idea/
