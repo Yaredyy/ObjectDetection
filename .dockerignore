@@ -1,0 +1,40 @@
+# Exclude Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Exclude virtual environments
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+env/
+
+# Exclude distribution and packaging files
+.Python
+build/
+dist/
+*.egg-info/
+
+# Exclude IDE and editor settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Exclude Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Exclude Heroku specific files
+*.log
+*.sqlite3
+*.db
+.DS_Store
+
+# Exclude other temporary files
+*.tgz
+*.zip
+*.rar
+*.tar.gz

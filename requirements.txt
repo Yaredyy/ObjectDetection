@@ -1,8 +1,7 @@
-fastapi
-uvicorn
-opencv-python
-numpy
-ultralytics
-pydantic
-requests  # Optional, only if needed later
-python-multipart
+fastapi==0.115.2
+uvicorn==0.21.1
+opencv-python==4.10.0.84
+numpy==2.1.2
+ultralytics==8.3.14
+pydantic==2.9.2
+python-multipart==0.0.12
