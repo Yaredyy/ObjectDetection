@@ -1,6 +1,5 @@
 version: '3.8'
 
-
 services:
   app:
     build:
@@ -9,5 +8,9 @@ services:
     ports:
       - "8000:8000"  # Expose port 8000
     environment:
-      - UVICORN_HOST=0.0.0.0  # Make sure your app listens on all interfaces
-      - UVICORN_PORT=8000      # Set the port to match the CMD in Dockerfile
+      - UVICORN_HOST=0.0.0.0
+      - UVICORN_PORT=8000
+    restart: unless-stopped  # Ensure the app restarts if it crashes
+    volumes:
+      - .:/app  # Optional: Mount the current directory
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]  # Optional: Explicitly define the command
