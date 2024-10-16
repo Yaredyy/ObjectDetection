@@ -1,0 +1,6 @@
+# created by virtualenv automatically
+.DS_Store
+*.dylib
+__pycache__
+bin
+lib
