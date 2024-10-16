@@ -1,6 +1,60 @@
-# created by virtualenv automatically
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+env/ 
+
+# Distribution / Packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Pytest
+.cache/
+*.cover
+coverage.xml
+*.coveragerc
+*.pytest_cache/
+*.test
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Heroku specific
+*.log
+*.sqlite3
+*.db
 .DS_Store
-*.dylib
-__pycache__
-bin
-lib
+*.pyc
+*.pyo
+
+# Miscellaneous
+*.tgz
+*.zip
+*.rar
+*.tar.gz
