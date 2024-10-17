@@ -4,7 +4,7 @@ This project is a FastAPI application that utilizes the YOLOv5 model for real-ti
 
 It is also delpoyed on Railway for use! To be pipelined?
 
-[watzthere.up.railway.app](watzthere.up.railway.app)
+[watzthere.up.railway.app](https://watzthere.up.railway.app)
 
 
 ## Features
