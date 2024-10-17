@@ -2,7 +2,7 @@
 
 This project is a FastAPI application that utilizes the YOLOv5 model for real-time object detection. Users can upload images, and the application will return the image with detected objects highlighted with bounding boxes.
 
-It is also delpoyed on Heroku! To be pipelined?
+Deploying this has been a hassle, if anyone knows a budget friendly website or 1gb free storage hosting, it would be helpful.
 
 ## Features
 
