@@ -6,6 +6,7 @@ It is also delpoyed on Railway for use! To be pipelined?
 
 [watzthere.up.railway.app](https://watzthere.up.railway.app)
 
+Don't worry, pictures are not stored. I literally don't care about your secrets.
 
 ## Features
 
