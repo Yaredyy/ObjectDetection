@@ -42,5 +42,7 @@ COPY --from=builder /app /app
 # Ensure the /usr/local/bin directory is in the PATH
 ENV PATH="/usr/local/bin:${PATH}"
 
+#Expose Port
+Expose 8080
 # Command to run your application using python -m to avoid PATH issues
 CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
