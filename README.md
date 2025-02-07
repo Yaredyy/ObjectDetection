@@ -1,12 +1,12 @@
 # FastAPI Object Detection with YOLOv5
 
-This project is a FastAPI application that utilizes the YOLOv5 model for real-time object detection. Users can upload images, and the application will return the image with detected objects highlighted with bounding boxes.
+This project is a FastAPI application that utilizes the YOLOv5 model for real-time object detection. Users can upload images, and the application will return the image with detected objects highlighted in bounding boxes.
 
-It is also delpoyed on Railway for use! To be pipelined?
+It is also deployed on GoogleCloudRun for use! To be pipelined?
 
-[watzthere.up.railway.app](https://watzthere.up.railway.app)
+[bit.ly/watzthere](https://bit.ly/watzthere)
 
-Don't worry, pictures are not stored
+Don't worry, pictures are not stored, merely proccesseed temporary.
 
 ## Features
 
