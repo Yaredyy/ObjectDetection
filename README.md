@@ -2,9 +2,9 @@
 
 This project is a FastAPI application that utilizes the YOLOv5 model for real-time object detection. Users can upload images, and the application will return the image with detected objects highlighted in bounding boxes.
 
-It is also deployed on GoogleCloudRun for use! To be pipelined?
+It is also deployed on OnRender, try it at:
 
-[bit.ly/watzthere](https://bit.ly/watzthere)
+[bit.ly/WhatzThere](https://bit.ly/WhatzThere)
 
 Don't worry, pictures are not stored, merely proccesseed temporary.
 
@@ -16,8 +16,14 @@ Don't worry, pictures are not stored, merely proccesseed temporary.
 
 ## Requirements
 
-To run this project locally, you need Python 3.9 or higher. You can install the required packages using:
+To run this project locally, you need Python 3. You can install the required packages using:
 
 ```bash
 pip install -r requirements.txt
+```
+
+then run it using:
+
+```bash
+python .\main.py
 ```
