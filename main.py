@@ -7,18 +7,19 @@ import logging
 import os
 from ultralytics import YOLO
 from io import BytesIO
-import requests
+
+import gdown
 
 app = FastAPI()
 
-model_url = "https://drive.google.com/uc?export=download&id=1OUhPbZ8VWLevKmG44F09gQpiQN0F-Pk1"
+
+model_url = "https://drive.google.com/uc?id=1OUhPbZ8VWLevKmG44F09gQpiQN0F-Pk1"
 model_path = 'yolov5su.pt'
 
+
 def download_model():
-    print("Downloading model weights from Google Drive...")
-    response = requests.get(model_url, allow_redirects=True)
-    with open(model_path, 'wb') as f:
-        f.write(response.content)
+    print("Downloading model weights from Google Drive using gdown...")
+    gdown.download(model_url, model_path, quiet=False)
     print("Download complete.")
 
 if not os.path.exists(model_path):
@@ -180,6 +181,8 @@ async def get_html():
     with open("index.html", "r") as f:
         return f.read()
 
+
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
