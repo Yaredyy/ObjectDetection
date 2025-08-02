@@ -7,24 +7,32 @@ import logging
 import os
 from ultralytics import YOLO
 from io import BytesIO
+import requests
 
 app = FastAPI()
 
-# Define path to the YOLOv5 model file
-model_path = 'yolov5su.pt'  # Adjust to your model file location
+model_url = "https://drive.google.com/uc?export=download&id=1OUhPbZ8VWLevKmG44F09gQpiQN0F-Pk1"
+model_path = 'yolov5su.pt'
 
-# Check if the model file exists
+def download_model():
+    print("Downloading model weights from Google Drive...")
+    response = requests.get(model_url, allow_redirects=True)
+    with open(model_path, 'wb') as f:
+        f.write(response.content)
+    print("Download complete.")
+
 if not os.path.exists(model_path):
-    logging.error(f"Model file does not exist: {model_path}")
+    download_model()
 
-# Load the YOLOv5 model
+
+# Load the model
 try:
     model = YOLO(model_path)
 except Exception as e:
     logging.error(f"Error loading YOLOv5 model: {e}")
-    model = None  # Set model to None to prevent further calls if loading failed
+    model = None 
 
-# Add a mapping of class IDs to their corresponding names
+#objects
 class_names = {
     0: "Person",
     1: "Bicycle",
@@ -108,6 +116,7 @@ class_names = {
     79: "Toothbrush"
 }
 
+
 # Define function to process images and detect objects
 def detect_objects(image: np.ndarray):
     if model is None:
@@ -132,6 +141,7 @@ def detect_objects(image: np.ndarray):
 
     return detected_objects
 
+
 # Function to draw bounding boxes on the image
 def draw_bounding_boxes(image: np.ndarray, detections):
     for detection in detections:
@@ -146,6 +156,7 @@ def draw_bounding_boxes(image: np.ndarray, detections):
 
     return image
 
+
 # API route to upload an image and get detected objects
 @app.post("/upload/")
 async def upload_image(file: UploadFile = File(...)):
@@ -155,14 +166,13 @@ async def upload_image(file: UploadFile = File(...)):
 
     detections = detect_objects(image)
     
-    # Draw bounding boxes on the image
     output_image = draw_bounding_boxes(image, detections)
     
-    # Convert the image back to bytes
     _, buffer = cv2.imencode('.jpg', output_image)
     image_stream = BytesIO(buffer)
 
     return StreamingResponse(image_stream, media_type="image/jpeg")
+
 
 # Route to serve the HTML file
 @app.get("/", response_class=HTMLResponse)

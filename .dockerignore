@@ -12,6 +12,7 @@ ENV/
 .venv/
 puvevn/
 env.bak/
+myEnv/
 
 # Exclude distribution and packaging files
 .Python
@@ -39,3 +40,6 @@ dist/
 *.zip
 *.rar
 *.tar.gz
+
+# Exclude other temporary folders
+Useless for now/
